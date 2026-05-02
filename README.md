@@ -24,7 +24,7 @@
 
 ### 1. 获取代码
 
-将脚本保存为 `doc_compare.py`。
+将脚本保存为 `main.py`。
 
 ### 2. 安装依赖
 
@@ -48,18 +48,18 @@ pip install scikit-learn python-docx numpy
 ### 基本用法
 
 ```bash
-python doc_compare.py 旧文件路径 新文件路径
+python main.py 旧文件路径 新文件路径
 ```
 
 示例：
 ```bash
-python doc_compare.py old_version.docx new_version.docx
+python main.py old_version.docx new_version.docx
 ```
 
 ### 指定相似度算法
 
 ```bash
-python doc_compare.py old.txt new.txt --method tfidf
+python main.py old.txt new.txt --method tfidf
 ```
 
 支持的算法：
@@ -71,7 +71,7 @@ python doc_compare.py old.txt new.txt --method tfidf
 ### 调整相似度阈值
 
 ```bash
-python doc_compare.py old.docx new.docx --threshold 0.4
+python main.py old.docx new.docx --threshold 0.4
 ```
 
 阈值范围 `0.0 ~ 1.0`，默认 `0.3`。  
@@ -80,7 +80,7 @@ python doc_compare.py old.docx new.docx --threshold 0.4
 ### 不显示终端详细差异内容
 
 ```bash
-python doc_compare.py old.docx new.docx --no-detail
+python main.py old.docx new.docx --no-detail
 ```
 
 此时终端只显示每个段落的变更类型和编号，不展示具体内容/差异详情。
@@ -89,16 +89,16 @@ python doc_compare.py old.docx new.docx --no-detail
 
 ```bash
 # 只生成 HTML 报告
-python doc_compare.py old.docx new.docx --report html
+python main.py old.docx new.docx --report html
 
 # 只生成 Markdown 报告
-python doc_compare.py old.docx new.docx --report md
+python main.py old.docx new.docx --report md
 
 # 同时生成 HTML 和 Markdown 报告
-python doc_compare.py old.docx new.docx --report both
+python main.py old.docx new.docx --report both
 
 # 指定输出目录
-python doc_compare.py old.docx new.docx --report html --output-dir ./reports
+python main.py old.docx new.docx --report html --output-dir ./reports
 ```
 
 报告默认命名格式为：`comparison_<旧文件名>_<新文件名>.html` 或 `.md`。
